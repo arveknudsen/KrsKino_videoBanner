@@ -45,30 +45,9 @@ a {
     margin: 0 auto;
 }
 
-.top img {
-    width: 100%;
-    height:auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 998;
-    position: relative;
-    border: 0px;
-}
-
-.top {
-    height: 300px;
-    width: auto;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.bottom img {
-    width: 120px;
-    float: right;
-    margin-right: 15px;
-    margin-top: 20px;
-    border: 0px;
+.poster {
+	margin-top: -35px !important;
+	margin-left: -143px !important;
 }
 
 .bottom h1 {
@@ -76,11 +55,6 @@ a {
     margin-left: 15px;
 }
 
-.bottom {
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-}
 
 .noytral {
     background-color: #000000;
@@ -89,10 +63,6 @@ a {
 
 .noytral h1 {
     color: white;
-}
-
-.gronn h1 {
-    color: #fff;
 }
 
 h1 {
