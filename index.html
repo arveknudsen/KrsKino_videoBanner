@@ -17,7 +17,9 @@
 			font-family: 'VideoJS';
 			src: url('http://vjs.zencdn.net/f/1/vjs.eot');
 			src: url('http://vjs.zencdn.net/f/1/vjs.eot?#iefix') format('embedded-opentype'), url('http://vjs.zencdn.net/f/1/vjs.woff') format('woff'), url('http://vjs.zencdn.net/f/1/vjs.ttf') format('truetype');
-		}r
+		}
+		
+		r
 	</style>
 
 </head>
@@ -37,26 +39,27 @@
 			<div id="other" style="display:none">
 				<div class="vidwrap">
 					<a href="http://www.krskino.no/incoming/article1235538.ece?" target="_blank">
-					<img class="poster" src="poster.jpg">
+						<img class="poster" src="poster.jpg">
 
 				</div>
 			</div>
 		</div>
 
 
-	<script src="clicktag.js" type="text/javascript"></script>
+		<script src="clicktag.js" type="text/javascript"></script>
 
-	<script>
-		var vid = document.getElementById('video1');
-		vid.addEventListener("ended", hideVideo, false);
-
-		function hideVideo() {
+		<script>
 			var vid = document.getElementById('video1');
-			var other = document.getElementById('other');
-			vid.removeEventListener("ended", hideVideo, false);
-			vid.style.display = 'none';
-			other.style.display = 'block';
-		}
-	</script>
+			vid.addEventListener("ended", hideVideo, false);
+
+			function hideVideo() {
+				var vid = document.getElementById('video1');
+				var other = document.getElementById('other');
+				vid.removeEventListener("ended", hideVideo, false);
+				vid.style.display = 'none';
+				other.style.display = 'block';
+			}
+		</script>
 </body>
+
 </html>
