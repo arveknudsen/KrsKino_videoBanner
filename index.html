@@ -17,42 +17,46 @@
 			font-family: 'VideoJS';
 			src: url('http://vjs.zencdn.net/f/1/vjs.eot');
 			src: url('http://vjs.zencdn.net/f/1/vjs.eot?#iefix') format('embedded-opentype'), url('http://vjs.zencdn.net/f/1/vjs.woff') format('woff'), url('http://vjs.zencdn.net/f/1/vjs.ttf') format('truetype');
-		}
+		}r
 	</style>
- 
+
 </head>
 
 <body>
 	<div class="section group wrapper noytral">
-		<div class="div">
-			<img class="logo" src="kino_neg.png">
-			<div class="vidwrap">
-				<video class="video-js vjs-default-skin " preload="auto" controls muted autoplay width="575" height="230" data-setup='{"example_option":true}' poster="poster.jpg">
-					<source src="kino2.mp4" type='video/mp4' />
-					<source src="kino2.webmsd.webm" type='video/webm' />
-					<source src="" type='video/ogg' />
-					<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-				</video>
+
+		<img class="logo" src="kino_neg.png">
+		<div class="vidwrap">
+			<video class="video-js vjs-default-skin vid" id="video1" preload="auto" controls muted autoplay width="575" height="230" data-setup='{"example_option":true}'>
+				<source src="kino2.mp4" type='video/mp4' />
+				<source src="kino2.webmsd.webm" type='video/webm' />
+				<source src="" type='video/ogg' />
+				<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+			</video>
+
+			<div id="other" style="display:none">
+				<div class="vidwrap">
+					<img src="poster.jpg">
+				</div>
 			</div>
 		</div>
-      <a href="" target="_blank"></a>
+
 	</div>
 	<script src="clicktag.js" type="text/javascript"></script>
 
 	<script>
-		videojs("my_video_1").ready(function(){
+		var vid = document.getElementById('video1');
+		vid.addEventListener("ended", hideVideo, false);
 
-			var vid = this;
-			vid.on("ended", function(){
-				alert ("I have triggered");
-				vid.posterImage.show();
-				vid.bigPlayButton.show();
-				vid.currentTime(0);
-			});
-
-		});
+		function hideVideo() {
+			var vid = document.getElementById('video1');
+			var other = document.getElementById('other');
+			vid.removeEventListener("ended", hideVideo, false);
+			vid.style.display = 'none';
+			other.style.display = 'block';
+		}
 	</script>
-	
+
 </body>
 
 </html>
